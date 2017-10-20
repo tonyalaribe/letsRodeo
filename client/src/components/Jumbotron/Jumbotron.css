@@ -1,0 +1,10 @@
+.jumbotron {
+    margin-bottom: 0px;
+     background-image: url(../../images/rodeo.jpeg);  
+    background-color: #7c5e29;
+    background-position: 0% 25%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+     text-shadow: #7c5e29 0.3em 0.3em 0.3em;  
+}

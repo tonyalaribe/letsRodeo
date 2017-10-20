@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Jumbotron from "../../components/Jumbotron";
 import DeleteBtn from "../../components/DeleteBtn";
+import Card from "../../components/Card";
 import API from "../../utils/API";
 import { Col, Row, Container } from "../../components/Grid";
 import { List, ListItem } from "../../components/List";
@@ -32,18 +33,23 @@ class Rodeos extends Component {
     return (
       <Container fluid>
         <Row>
-          <Col size="md-6">
+           <Col size="md-6"> 
+                {/* <Jumbotron>TEST
+                </Jumbotron> */}
             <Jumbotron>
-              <h1>Add a Rodeo to Our Rodeo list.</h1>
+              <h1>Add a Rodeo to Our List</h1>
             </Jumbotron>
             <form>
-              <Input name="title" placeholder="Title (required)" />
-              <Input name="author" placeholder="Author (required)" />
-              <TextArea name="synopsis" placeholder="Synopsis (Optional)" />
+              <Input name="name" placeholder="Name (required)" />
+              <Input name="location" placeholder="Location (required)" />
+              <Input name="date" placeholder="Date (required)" />
+              <Input name="contact" placeholder="Contact (required)" />
+              <Input name="events" placeholder="Events (required)" />
               <FormBtn>Submit Rodeo</FormBtn>
             </form>
-          </Col>
-          <Col size="md-6">
+           </Col> 
+            <Col size="md-6">  
+            <Card />
             <Jumbotron>
               <h1>Rodeos On My List</h1>
             </Jumbotron>
@@ -65,7 +71,7 @@ class Rodeos extends Component {
             ) : (
               <h3>No Results to Display</h3>
             )}
-          </Col>
+           </Col> 
         </Row>
       </Container>
     );
