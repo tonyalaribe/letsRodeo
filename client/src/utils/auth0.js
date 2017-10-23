@@ -2,6 +2,7 @@ import Auth0Lock from 'auth0-lock';
 import mitt from 'mitt';
 
 //import { browserHistory } from 'react-router'
+export var Emitter = mitt()
 
  class AuthService {
   constructor(clientId, domain) {
@@ -12,12 +13,11 @@ import mitt from 'mitt';
         responseType: 'token'
       }
     })
-    // Add callback for lock `authenticated` event
+    // Add callback for lock `authenticated` event credentials to specific data 
     this.lock.on('authenticated', this._doAuthentication.bind(this))
     // binds login functions to keep this context
     this.login = this.login.bind(this)
 
-    this.emitter = mitt()
   }
 
   _doAuthentication(authResult) {
@@ -33,13 +33,16 @@ import mitt from 'mitt';
         this.setProfile(profile)
       }
     })
-    this.emitter.emit('authenticated',true)
+    console.log("able to get auth profile. Next: redirect")
+
+    // this.emitter.emit('authenticated',true)
+    Emitter.emit('authenticated',true)
   }
   setProfile(profile) {
     // Saves profile data to local storage
     localStorage.setItem('profile', JSON.stringify(profile))
     // Triggers profile_updated event to update the UI
-    this.emitter.emit('profile_updated',profile)
+    Emitter.emit('profile_updated',profile)
 
   }
 
@@ -79,6 +82,6 @@ import mitt from 'mitt';
 
 }
 
-const authService = new AuthService('yqZpzeiFgoapsnpczQHIz0t6XoZjvEjL', 'emikra.auth0.com')
+const authService = new AuthService('X3dCjd6K5ZQwajXvzxHECQKksu0vPfgi', 'mariana.auth0.com')
 
 export default authService

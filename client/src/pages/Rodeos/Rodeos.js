@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, {Component} from "react";
 import Jumbotron from "../../components/Jumbotron";
 import DeleteBtn from "../../components/DeleteBtn";
 import API from "../../utils/API";
@@ -69,7 +69,7 @@ class Rodeos extends Component {
             )}
           </Col>
         </Row>
-        <img src={require('./cowboy.jpg')} />
+        <img src={require('./cowboy.jpg')} className="img-responsive"/>
       </Container>
     );
   }

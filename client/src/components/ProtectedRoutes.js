@@ -9,6 +9,7 @@ class ProtectedRoute extends Component {
   render(){
     let {component, ...rest} = this.props;
     let loggedIn = AuthService.loggedIn()
+    console.log(loggedIn);
     return (
       <Route {...rest} render={props => (
          loggedIn? (

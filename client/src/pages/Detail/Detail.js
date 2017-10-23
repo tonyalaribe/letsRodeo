@@ -18,7 +18,7 @@ class Detail extends Component {
 
   render() {
     return (
-      <Container fluid>
+      <Container fluid style={{backgroundImage:"url()"}}>
         <Row>
           <Col size="md-12">
             <Jumbotron>
@@ -43,6 +43,7 @@ class Detail extends Component {
             <Link to="/">← Back to Rodeos</Link>
           </Col>
         </Row>
+        
       </Container>
     );
   }
