@@ -10,7 +10,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/journal/bootstrap.min.css"/>
     <title>Let's Rodeo!!!</title>
     <style>
-      .loader-page{
+      #loader-page{
+
+        position:fixed;
+        top:0;
         width:100%;
         height:100vh;
       }
@@ -21,7 +24,14 @@
       You need to enable JavaScript to run this app.
     </noscript>
     <div id="root">
-      <img src="%PUBLIC_URL%/giphy.gif" class="loader-page"/>
+
     </div>
+    <img src="%PUBLIC_URL%/giphy.gif" id="loader-page"/>
+
+    <script>
+      setTimeout(function(){
+        document.getElementById("loader-page").style.display = "none";
+      },4000)
+    </script>
   </body>
 </html>
